@@ -5,12 +5,13 @@ import {useState, useEffect} from 'react'
 function Input() {
   
    
-       
+  const [Loading, setLoading] = useState(false)
   const [name, setName] = useState('');
   const [options, setOptions] = useState([])
   const [data, setData] = useState(false)
   
   useEffect(() => {
+    setLoading(true)
     const newUsers = async () => {
         const response = await fetch('https://jsonplaceholder.typicode.com/users')
        .then((res) => res.json())
@@ -43,7 +44,9 @@ function Input() {
     setOptions([])
   }
  
-  
+  if(!Loading) return <p className='text-center font-bold text-6xl'>No data</p>
+  if (!data) return <p className='text-center font-bold text-6xl'>Loading...</p>
+ 
 
     return (
     <div>
