@@ -52,7 +52,7 @@ function Input() {
     return (
     <div>
     <div className='flex justify-center mt-10'>
-    
+        <label>Name</label>
         <input id="input" className='w-96  h-16 border-1 shadow-lg rounded-lg' placeholder="Search..."
     
         onChange={e=> handleChange(e.target.value)}
