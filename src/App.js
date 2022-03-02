@@ -11,6 +11,7 @@ function App() {
 
   return (
     <div className="">
+    <h1 className='text-6xl font-bold text-center'>User database</h1>
      <Input/>
     </div>
   );

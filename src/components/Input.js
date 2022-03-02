@@ -39,20 +39,22 @@ function Input() {
     
   }  
 
+  
   const handleOptions =  (name) => {
     setName(name)
     setOptions([])
   }
  
-  if(!Loading) return <p className='text-center font-bold text-6xl'>No data</p>
+  
   if (!data) return <p className='text-center font-bold text-6xl'>Loading...</p>
- 
+  if(!Loading) return <p className='text-center font-bold text-6xl'>Data loaded</p>
 
     return (
     <div>
     <div className='flex justify-center mt-10'>
+    
         <input id="input" className='w-96  h-16 border-1 shadow-lg rounded-lg' placeholder="Search..."
-       
+    
         onChange={e=> handleChange(e.target.value)}
         value={name}
           />
